@@ -14,12 +14,12 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 public class ProductsFacade {
 
-  @Value("${getProduct.url}")
+  @Value("${getProduct.url}")  //aaqui va la url del servicio de buscador
   private String getProductUrl;
 
   private final RestTemplate restTemplate;
 
-  public Product getProduct(String id) {
+  public Product getProduct(Long id) {
 
     try {
       String url = String.format(getProductUrl, id);
