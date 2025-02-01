@@ -1,6 +1,6 @@
-package com.unir.orders.data;
+package com.unir.payments.data;
 
-import com.unir.orders.data.model.Payment;
+import com.unir.payments.data.model.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PaymentJpaRepository extends JpaRepository<Payment, Long> {

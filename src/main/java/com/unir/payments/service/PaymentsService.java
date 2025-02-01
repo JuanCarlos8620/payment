@@ -1,7 +1,7 @@
-package com.unir.orders.service;
+package com.unir.payments.service;
 
-import com.unir.orders.data.model.Payment;
-import com.unir.orders.controller.model.PaymentRequest;
+import com.unir.payments.data.model.Payment;
+import com.unir.payments.controller.model.PaymentRequest;
 
 import java.util.List;
 

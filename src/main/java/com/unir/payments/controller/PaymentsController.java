@@ -1,8 +1,8 @@
-package com.unir.orders.controller;
+package com.unir.payments.controller;
 
-import com.unir.orders.data.model.Payment; // Modelo de Pago
-import com.unir.orders.controller.model.PaymentRequest; // Solicitud de Pago
-import com.unir.orders.service.PaymentsService; // Servicio de Pagos
+import com.unir.payments.data.model.Payment; // Modelo de Pago
+import com.unir.payments.controller.model.PaymentRequest; // Solicitud de Pago
+import com.unir.payments.service.PaymentsService; // Servicio de Pagos
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -65,17 +65,18 @@ public class PaymentsController {
         }
     }
 
+
     // Endpoint para eliminar un pago por ID (DELETE)
     @DeleteMapping("/payments/{id}")
     public ResponseEntity<Void> deletePayment(@PathVariable Long id) {
         // Llama al servicio para eliminar el pago por ID
         boolean deleted = service.deletePayment(id);
 
-        // Si se eliminó correctamente, devuelve HTTP 204 (No Content)
+        // Si se eliminó correctamente, devuelve HTTP 204 (que no hay contenido)
         if (deleted) {
             return ResponseEntity.noContent().build();
         } else {
-            // Si no se pudo eliminar, devuelve HTTP 400 (Bad Request)
+            // Si no se pudo eliminar, devuelve HTTP 400 bad Request)
             return ResponseEntity.badRequest().build();
         }
     }

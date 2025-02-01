@@ -1,4 +1,4 @@
-package com.unir.orders.data.model;
+package com.unir.payments.data.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -29,11 +29,10 @@ public class Payment {
     private String paymentMethod;
 
     @Column(nullable = false)
-    private String status; // Estatus del pago, por ejemplo, "COMPLETED", "PENDING"
+    private String status; // Estatus del pago, como x ejemplo, "COMPLETED", "PENDING"
 
-    // Lista de IDs de productos asociados al pago
     @ElementCollection
-    @Column(name = "products")
-    private List<Long> products;  // Almacena solo los IDs de los productos
+    @Column(name = "books")
+    private List<Long> books;  // Almacena solo los IDs de los productos
 
 }
